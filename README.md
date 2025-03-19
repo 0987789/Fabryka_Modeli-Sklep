@@ -1,2 +1,1 @@
-# Projekt-Modelarstwo (projekt sklepu internetowego)
-Projekt sklepu internetowego na zajęcia
+Projekt sklepu internetowego na zajęcia z tworzenia aplikacji i stron internetowych
