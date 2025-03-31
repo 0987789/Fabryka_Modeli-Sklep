@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabryka Modeli</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
+</head>
+<body>
+    <div class="container" id="main">
+        <div class="container" id="navigation_main">
+            <div class="container" id="navigation_bar">
+                <ul>
+                    <li><a href="#">Samochody</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Sportowe</a></li>
+                            <li><a href="#">Klasyczne</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Statki</a></li>
+                    <li><a href="#">Samoloty</a></li>
+                    <li><a href="#">Figurki</a></li>
+                </ul>
+            </div>
+            <div class="container" id="navigation_misc">
+                <input type="text" placeholder="Szukaj...">
+                <button>Koszyk</button>
+                <button>Moje Konto</button>
+            </div>
+        </div>
+        <div class="container" id="content_main">
+            <div class="container" id="content_suggested">
+                <h1>Witamy w Fabryce Modeli!</h1>
+                <p>Oferujemy szeroki wybór modeli do budowy, w tym samochody, statki, samoloty i figurki.</p>
+                <h2>Nasze Najlepsze Produkty</h2>
+                <div class="product">
+                    <h3>Model Samochodu Sportowego</h3>
+                    <p>Cena: 150 PLN</p>
+                </div>
+                <div class="product">
+                    <h3>Model Statku Wojennego</h3>
+                    <p>Cena: 200 PLN</p>
+                </div>
+                <div class="product">
+                    <h3>Model Samolotu Myśliwskiego</h3>
+                    <p>Cena: 180 PLN</p>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="footer">
+            <div class="container" id="footer_left">
+                <p>Kontakt: info@fabrykamodeli.pl</p>
+                <p>Telefon: 123-456-789</p>
+            </div>
+            <div class="container" id="footer_right">
+                <p>&copy; 2023 Fabryka Modeli. Wszelkie prawa zastrzeżone.</p>
+                <div class="social-media">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                </div>
+                <form id="newsletter">
+                    <label for="email">Zapisz się do newslettera:</label>
+                    <input type="email" id="email" placeholder="Twój e-mail">
+                    <button type="submit">Zapisz</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
