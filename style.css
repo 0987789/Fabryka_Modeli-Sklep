@@ -91,6 +91,11 @@ body {
     color: #ffffff;
 }
 
+#navigation_bar ul li a.active {
+    background-color: #6c5ce7;
+    color: #ffffff;
+}
+
 #navigation_misc {
     flex: 0 0 auto;
     width: 350px;
