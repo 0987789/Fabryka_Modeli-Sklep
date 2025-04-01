@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabryka Modeli - Moje Konto</title>
+    <link rel="icon" type="image/png" href="Assets/main_page/Logo_v2.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="main">
+        <div class="container" id="navigation_main">
+            <div class="container" id="navigation_logo">
+                <a href="index.html">
+                    <img src="Assets/main_page/Logo_v2.png" alt="logo" id="logo">
+                </a>
+            </div>
+            <div class="container" id="navigation_bar">
+                <ul>
+                    <li><a href="category_military.html">Militaria</a></li>
+                    <li><a href="category_civ_vehicles.html">Pojazdy Cywilne</a></li>
+                    <li><a href="category_buildings.html">Budynki</a></li>
+                    <li><a href="category_materials.html">Materiały</a></li>
+                </ul>
+            </div>
+            <div class="container" id="navigation_misc">
+                <input type="text" placeholder="Szukaj...">
+                <a href="cart.html"><button>Koszyk</button></a>
+                <a href="account.html"><button class="active">Moje Konto</button></a>
+            </div>
+        </div>
+
+        <div class="container" id="content_main">
+            <div class="container" id="account_content">
+                <div class="container" id="account_sidebar">
+                    <div class="account_nav_item active">
+                        <a href="#profile">Profil</a>
+                    </div>
+                    <div class="account_nav_item">
+                        <a href="#orders">Zamówienia</a>
+                    </div>
+                    <div class="account_nav_item">
+                        <a href="#settings">Ustawienia</a>
+                    </div>
+                    <div class="account_nav_item">
+                        <a href="#logout">Wyloguj</a>
+                    </div>
+                </div>
+
+                <div class="container" id="account_main">
+                    <div class="account_section" id="profile">
+                        <h2>Mój Profil</h2>
+                        <div class="profile_info">
+                            <div class="profile_avatar">
+                                <img src="Assets/main_page/default_avatar.png" alt="Avatar użytkownika">
+                                <button class="change_avatar">Zmień avatar</button>
+                            </div>
+                            <form class="profile_details">
+                                <div class="form_group">
+                                    <label>Imię</label>
+                                    <input type="text" value="Jan" required>
+                                </div>
+                                <div class="form_group">
+                                    <label>Nazwisko</label>
+                                    <input type="text" value="Kowalski" required>
+                                </div>
+                                <div class="form_group">
+                                    <label>Email</label>
+                                    <input type="email" value="jan.kowalski@example.com" required>
+                                </div>
+                                <div class="form_group">
+                                    <label>Telefon</label>
+                                    <input type="tel" value="+48 123 456 789" required>
+                                </div>
+                                <button type="submit" class="save_changes">Zapisz zmiany</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="account_section" id="orders">
+                        <h2>Historia Zamówień</h2>
+                        <div class="orders_list">
+                            <div class="order_item">
+                                <div class="order_header">
+                                    <span class="order_number">Zamówienie #12345</span>
+                                    <span class="order_date">2024-03-15</span>
+                                </div>
+                                <div class="order_status">Status: W realizacji</div>
+                                <div class="order_total">Suma: 289,99 zł</div>
+                                <button class="order_details">Szczegóły zamówienia</button>
+                            </div>
+                            <div class="order_item">
+                                <div class="order_header">
+                                    <span class="order_number">Zamówienie #12344</span>
+                                    <span class="order_date">2024-03-10</span>
+                                </div>
+                                <div class="order_status">Status: Zrealizowane</div>
+                                <div class="order_total">Suma: 185,50 zł</div>
+                                <button class="order_details">Szczegóły zamówienia</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="account_section" id="settings">
+                        <h2>Ustawienia Konta</h2>
+                        <form class="settings_form">
+                            <div class="form_group">
+                                <label>Zmiana hasła</label>
+                                <input type="password" placeholder="Aktualne hasło" required>
+                                <input type="password" placeholder="Nowe hasło" required>
+                                <input type="password" placeholder="Potwierdź nowe hasło" required>
+                            </div>
+                            <div class="form_group">
+                                <label>Preferencje</label>
+                                <div class="checkbox_group">
+                                    <input type="checkbox" id="newsletter">
+                                    <label for="newsletter">Newsletter</label>
+                                </div>
+                                <div class="checkbox_group">
+                                    <input type="checkbox" id="notifications">
+                                    <label for="notifications">Powiadomienia o statusie zamówienia</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="save_changes">Zapisz ustawienia</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="footer">
+            <div class="container" id="footer_left">
+                <p>© 2023 Fabryka Modeli - Wszelkie prawa zastrzeżone</p>
+                <p>Zestawy modelarskie i akcesoria najwyższej jakości</p>
+            </div>
+            <div class="container" id="footer_right">
+                <p>Kontakt: info@fabrykamodeli.pl</p>
+                <p>Telefon: (48) 123-456-789</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/account.js"></script>
+</body>
+</html>
