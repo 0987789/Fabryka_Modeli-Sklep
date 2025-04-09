@@ -1,0 +1,99 @@
+Database
+
+Users:	user_id/login/password/name/surname/e-mail
+
+
+Military: id/name/type/nation/scale/producent/quantity/price
+Civ_vehicles: id/name/type/brand/scale/producent/quantity/price
+Buildings: id/name/scale/producent/quantity/price
+Materials: id/name/category/type/producent/quantity/price
+
+
+	Types: 
+		Military: tanks/vehicles/planes_helis/ships
+		Civ_vahicles: cars/trucks/motorcycles/planes_helis/trains
+		Buildings: ---
+		Materials: (cat): tools  (typ): blades/tweezers/brushes/pliers
+				  glues  (typ): for_plastic/epoxy/cyanoacrylate
+				  paints (typ): foundations/acrylic/sets
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Create Users table
+CREATE TABLE Users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    login VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    surname VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- Create Military table
+CREATE TABLE Military (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    type ENUM('tanks', 'vehicles', 'planes_helis', 'ships') NOT NULL,
+    nation VARCHAR(50) NOT NULL,
+    scale VARCHAR(50) NOT NULL,
+    producent VARCHAR(100) NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
+);
+
+-- Create Civ_vehicles table
+CREATE TABLE Civ_vehicles (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    type ENUM('cars', 'trucks', 'motorcycles', 'planes_helis', 'trains') NOT NULL,
+    brand VARCHAR(50) NOT NULL,
+    scale VARCHAR(50) NOT NULL,
+    producent VARCHAR(100) NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
+);
+
+-- Create Buildings table
+CREATE TABLE Buildings (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    scale VARCHAR(50) NOT NULL,
+    producent VARCHAR(100) NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
+);
+
+-- Create Materials table
+CREATE TABLE Materials (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    category ENUM('tools', 'glues', 'paints') NOT NULL,
+    type ENUM('blades', 'tweezers', 'brushes', 'pliers', 
+               'for_plastic', 'epoxy', 'cyanoacrylate', 
+               'foundations', 'acrylic', 'sets') NOT NULL,
+    producent VARCHAR(100) NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
+);
