@@ -1,0 +1,114 @@
+:root {
+    --primary: #6c5ce7;
+    --secondary: #5b4cc4;
+    --text: #2d3436;
+    --gray: #636e72;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f0f2f5;
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 95%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  
+  /* Navigation */
+  #navigation_main {
+    background: #fff;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--primary);
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  
+  #navigation_bar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 10px 0;
+  }
+  
+  #navigation_bar ul li a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: var(--transition);
+  }
+  
+  #navigation_bar ul li a:hover, 
+  #navigation_bar ul li a.active {
+    background: var(--primary);
+    color: #fff;
+  }
+  
+  /* Cards & Buttons */
+  button, .btn {
+    padding: 10px 20px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  button:hover, .btn:hover { background: var(--secondary); }
+  
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container { padding: 0 15px; }
+    #navigation_main .container {
+      flex-direction: column;
+      height: auto;
+      padding: 15px;
+    }
+    #navigation_bar ul { flex-direction: column; }
+  }
+  
+  /* Account Page */
+  #account_content { display: flex; gap: 30px; padding: 30px; }
+  
+  .profile_avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  /* Utilities */
+  .flex { display: flex; }
+  .grid { display: grid; }
+  .nowrap { white-space: nowrap; }
