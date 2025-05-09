@@ -9,30 +9,31 @@
 </head>
 <body>
     <div class="container" id="main">
-        <div class="container" id="navigation_main">
-            <div class="container" id="navigation_logo">
-                <a href="index.html">
+    <div class="container" id="navigation_main">
+            <div class="container" id="navigation_logo"> <!-- logo of the store-->
+                <a href="index.php">
                     <img src="Assets/main_page/Logo_v2.png" alt="logo" id="logo">
                 </a>
             </div>
             <div class="container" id="navigation_bar">
                 <ul>
-                    <li><a href="category_military.html">Militaria</a></li>
-                    <li><a href="category_civ_vehicles.html">Pojazdy Cywilne</a></li>
-                    <li><a href="category_buildings.html">Budynki</a></li>
-                    <li><a href="category_materials.html" class="active">Materiały</a></li>
+                    <li><a href="category_military.php">Militaria</a></li>
+                    <li><a href="category_civ_vehicles.php">Pojazdy Cywilne</a></li>
+                    <li><a href="category_buildings.php">Budynki</a></li>
+                    <li><a href="category_materials.php">Materiały</a></li>
                 </ul>
             </div>
             <div class="container" id="navigation_misc">
-                <input type="text" placeholder="Szukaj...">
-                <a href="cart.html"><button>Koszyk</button></a>
-                <a href="account.html"><button>Moje Konto</button></a>
+                <a href="cart.php"><button>Koszyk</button></a>
             </div>
         </div>
 
         <div class="container" id="content_main">
             <div class="container" id="content_suggested">
                 <!-- Content will be added here -->
+                <?php
+                 include('PHP_scripts/materials_content_script.php');
+                 ?>
             </div>
         </div>
 

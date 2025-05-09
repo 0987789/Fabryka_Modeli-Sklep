@@ -1,1 +1,6 @@
-create PHP scripts for database
+create PHP scripts for database - done
+add address window to cart
+create PHP scripts for filtering inside each category
+add about section in index.php with width of filters on categories subpages
+CSS revamp
+add accout subpage and functionalities (data, history, address)
