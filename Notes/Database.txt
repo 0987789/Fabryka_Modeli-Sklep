@@ -2,6 +2,8 @@ Database
 
 Users:	user_id/login/password/name/surname/e-mail
 
+Orders: order_id/user_id/address/products_ids/quantity/price
+
 
 Military: id/name/type/nation/scale/producent/quantity/price
 Civ_vehicles: id/name/type/brand/scale/producent/quantity/price

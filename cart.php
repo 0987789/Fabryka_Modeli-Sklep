@@ -194,7 +194,9 @@ if (isset($_POST['payment_method'])) {
                             </tr>
                         </tfoot>
                     </table>
-                    
+                    <div class="address-section">
+                        
+                    </div>
                     <!-- Payment options -->
                     <div class="payment-section">
                         <h2>Opcje Płatności</h2>
