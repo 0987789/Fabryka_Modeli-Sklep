@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Maj 10, 2025 at 08:44 PM
+-- Generation Time: Cze 03, 2025 at 10:47 PM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.2.12
 
@@ -49,10 +49,10 @@ INSERT INTO `buildings` (`building_id`, `name`, `description`, `scale`, `produce
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `civ_vehices`
+-- Struktura tabeli dla tabeli `civ_vehicles`
 --
 
-CREATE TABLE `civ_vehices` (
+CREATE TABLE `civ_vehicles` (
   `civ_vehicle_id` int(11) NOT NULL,
   `name` varchar(60) NOT NULL,
   `description` text NOT NULL,
@@ -65,10 +65,10 @@ CREATE TABLE `civ_vehices` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `civ_vehices`
+-- Dumping data for table `civ_vehicles`
 --
 
-INSERT INTO `civ_vehices` (`civ_vehicle_id`, `name`, `description`, `type`, `brand`, `scale`, `producent`, `quantity`, `price`) VALUES
+INSERT INTO `civ_vehicles` (`civ_vehicle_id`, `name`, `description`, `type`, `brand`, `scale`, `producent`, `quantity`, `price`) VALUES
 (1, 'Syrena 104', 'Prototyp polskiego coupe z 1964 roku.', 'cars', 'FSO', '1:24', 'ModelWorks', 3, 349.00),
 (2, 'VW Beetle 1967', 'Kultowy \"Garbus\" w wersji kabriolet.', 'cars', 'Volkswagen', '1:24', 'Revell', 12, 189.00),
 (3, 'Tesla Cybertruck', 'Elektryczny pickup z panelami ze stali nierdzewnej.', 'cars', 'Tesla', '1:18', 'Model-Tech', 8, 499.00),
@@ -175,33 +175,24 @@ INSERT INTO `military` (`military_id`, `name`, `description`, `type`, `nation`, 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `orders`
---
-
-CREATE TABLE `orders` (
-  `order_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `address` varchar(200) NOT NULL,
-  `products_ids` text NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `price` decimal(10,2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Struktura tabeli dla tabeli `users`
 --
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `login` varchar(25) NOT NULL,
-  `password` varchar(40) NOT NULL,
+  `password` varchar(65) NOT NULL,
   `name` varchar(50) NOT NULL,
   `surname` varchar(50) NOT NULL,
-  `e_mail` varchar(100) NOT NULL,
-  `address` varchar(200) NOT NULL
+  `e_mail` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `login`, `password`, `name`, `surname`, `e_mail`) VALUES
+(1, 'a', '$2y$10$8RJX0UlKPKPFyNPYZtxXeu1WTrGqmvVDjEkMl04yYIoUrPgDvGNYO', 'a', 'a', 'a@a.pl');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -215,90 +206,20 @@ ALTER TABLE `buildings`
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Indeksy dla tabeli `civ_vehices`
---
-ALTER TABLE `civ_vehices`
-  ADD PRIMARY KEY (`civ_vehicle_id`),
-  ADD UNIQUE KEY `name` (`name`);
-
---
--- Indeksy dla tabeli `materials`
---
-ALTER TABLE `materials`
-  ADD PRIMARY KEY (`material_id`),
-  ADD UNIQUE KEY `name` (`name`);
-
---
--- Indeksy dla tabeli `military`
---
-ALTER TABLE `military`
-  ADD PRIMARY KEY (`military_id`),
-  ADD UNIQUE KEY `name` (`name`);
-
---
--- Indeksy dla tabeli `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`order_id`),
-  ADD KEY `user_id` (`user_id`);
-
---
 -- Indeksy dla tabeli `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `login` (`login`),
-  ADD UNIQUE KEY `e_mail` (`e_mail`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `buildings`
---
-ALTER TABLE `buildings`
-  MODIFY `building_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `civ_vehices`
---
-ALTER TABLE `civ_vehices`
-  MODIFY `civ_vehicle_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-
---
--- AUTO_INCREMENT for table `materials`
---
-ALTER TABLE `materials`
-  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `military`
---
-ALTER TABLE `military`
-  MODIFY `military_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

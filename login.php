@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabryka Modeli - Budynki</title>
-    <link rel="icon" type="image/png" href="Assets/main_page/Logo_v2.png">
+    <title>Fabryka Modeli - Logowanie</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,21 +24,46 @@
             </div>
             <div id="navigation_misc">
                 <a href="cart.php"><button>Koszyk</button></a>
-                <?php
-                if (isset($_SESSION['user_id'])) {
-                    echo '<a href="account.php"><button>Moje Konto</button></a>';
-                } else {
-                    echo '<a href="login.php"><button>Moje Konto</button></a>';
-                }
-                ?>
             </div>
         </div>
 
         <div class="container" id="content_main">
-            <div class="container" id="content_suggested">
+            <div class="container" id="login_form">
+                <h2>Logowanie</h2>
+                
                 <?php
-                include('PHP_scripts/buildings_content_script.php');
+                if (isset($_GET['error'])) {
+                    if ($_GET['error'] == 'invalid') {
+                        echo '<p style="color: red;">Nieprawidłowy login lub hasło. Spróbuj ponownie.</p>';
+                    } elseif ($_GET['error'] == 'invalid_password') {
+                        echo '<p style="color: red;">Nieprawidłowe hasło. Spróbuj ponownie.</p>';
+                    }
+                }
+                
+                if (isset($_GET['registered']) && $_GET['registered'] == 'success') {
+                    echo '<p style="color: green;">Rejestracja zakończona sukcesem! Możesz się teraz zalogować.</p>';
+                }
                 ?>
+                
+                <form action="PHP_scripts/login_script.php" method="post">
+                    <div class="form_group">
+                        <label for="login">Login:</label>
+                        <input type="text" id="login" name="login" required>
+                    </div>
+                    
+                    <div class="form_group">
+                        <label for="password">Hasło:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    
+                    <div class="form_group">
+                        <button type="submit">Zaloguj się</button>
+                    </div>
+                </form>
+                
+                <div class="register_link">
+                    <p>Nie masz konta? <a href="register.php"><button>Zarejestruj się</button></a></p>
+                </div>
             </div>
         </div>
 
